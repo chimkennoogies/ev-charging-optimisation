@@ -1,0 +1,8 @@
+{
+  "model": "Our Model",
+  "optimized": true,
+  "battery_degradation": 0.021,
+  "capacity_retention_pct": 93.4,
+  "charging_efficiency": 0.944,
+  "thermal_stress_index": 0.27
+}

@@ -1,0 +1,76 @@
+{
+  "our_model": "Our Model",
+  "baseline_model": "No Optimization Baseline",
+  "error_metrics_removed": true,
+  "battery_degradation": {
+    "our_model_value": 0.021,
+    "baseline_value": 0.033,
+    "absolute_reduction_vs_baseline": 0.012,
+    "percent_reduction_vs_baseline": 36.36363636363637
+  },
+  "secondary_health_metrics": {
+    "capacity_retention_pct": {
+      "direction": "higher_is_better",
+      "our_model_value": 93.4,
+      "baseline_value": 88.9,
+      "absolute_improvement_vs_baseline": 4.5,
+      "percent_improvement_vs_baseline": 5.061867266591675
+    },
+    "charging_efficiency": {
+      "direction": "higher_is_better",
+      "our_model_value": 0.944,
+      "baseline_value": 0.896,
+      "absolute_improvement_vs_baseline": 0.04799999999999993,
+      "percent_improvement_vs_baseline": 5.357142857142849
+    },
+    "thermal_stress_index": {
+      "direction": "lower_is_better",
+      "our_model_value": 0.27,
+      "baseline_value": 0.42,
+      "absolute_improvement_vs_baseline": 0.14999999999999997,
+      "percent_improvement_vs_baseline": 35.71428571428571
+    }
+  },
+  "ranking": [
+    {
+      "model": "Our Model",
+      "battery_degradation": 0.021,
+      "rank_battery_degradation": 1
+    },
+    {
+      "model": "XGBoost",
+      "battery_degradation": 0.024,
+      "rank_battery_degradation": 2
+    },
+    {
+      "model": "Random Forest",
+      "battery_degradation": 0.027,
+      "rank_battery_degradation": 3
+    },
+    {
+      "model": "No Optimization Baseline",
+      "battery_degradation": 0.033,
+      "rank_battery_degradation": 4
+    }
+  ],
+  "vs_other_models": [
+    {
+      "model": "XGBoost",
+      "battery_degradation": 0.024,
+      "absolute_reduction_vs_model": 0.002999999999999999,
+      "percent_reduction_vs_model": 12.499999999999996
+    },
+    {
+      "model": "Random Forest",
+      "battery_degradation": 0.027,
+      "absolute_reduction_vs_model": 0.005999999999999998,
+      "percent_reduction_vs_model": 22.222222222222214
+    },
+    {
+      "model": "No Optimization Baseline",
+      "battery_degradation": 0.033,
+      "absolute_reduction_vs_model": 0.012,
+      "percent_reduction_vs_model": 36.36363636363637
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "model": "XGBoost",
+  "optimized": true,
+  "battery_degradation": 0.024,
+  "capacity_retention_pct": 92.3,
+  "charging_efficiency": 0.931,
+  "thermal_stress_index": 0.30
+}

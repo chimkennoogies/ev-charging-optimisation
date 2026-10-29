@@ -1,0 +1,5 @@
+model,battery_degradation,rank_battery_degradation
+Our Model,0.021,1
+XGBoost,0.024,2
+Random Forest,0.027,3
+No Optimization Baseline,0.033,4

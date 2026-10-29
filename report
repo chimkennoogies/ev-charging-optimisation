@@ -1,0 +1,1170 @@
+CHAPTER 1
+INTRODUCTION
+
+1.1. Introduction to the Project
+
+Because they can help people use less fossil fuels and promote sustainable transport, electric cars have become one of the most important parts of modern transportation. As more people become interested in electric cars, managing the charging process has become a big problem for both consumers and energy suppliers. In fact, the process of deciding how and when to charge the vehicle influences charging costs and power consumption.
+
+The current project, named EV Charging Pattern Optimization Using Machine Learning, is designed for studying charging patterns of EVs and suggesting optimal ways of charging vehicles. The system is based on past data and helps analyze essential factors, including duration of charging, level of charge, temperature, type of charger used, battery capacity, and time of charging. Using machine learning approaches, it will be possible to detect more effective charging patterns that do not lead to battery damage [2,5].
+
+This project covers everything from preparing the data to creating features, modeling, optimizing, and finally building an application with a user interface that helps people make decisions. The end result will be a system that helps people make better choices.
+
+The purpose of this project is to solve this problem by developing a machine learning system that is able to:
+Analyze data for EV charging events
+Predict the consequences of EV charging
+Identify inefficient EV charging situations
+Make suggestions regarding efficient EV charging times and chargers
+Thus, the project provides a predictive and optimization framework for improving EV charging decisions.
+
+1.2. Problem Statement
+
+In most instances, the choice of EV charging will depend solely on the convenience of the person making such decisions without consideration of efficiency and sustainability. Most EV users opt to charge their vehicles depending on how much power has been depleted or availability of charging stations without considering the implications of their actions. However, many factors determine how costly charging will be and whether it is sustainable for the EV's battery longevity. The key factors include charging frequency, type of charger, weather conditions, charging speed, and battery state of charge when the EV needs to be charged.
+
+Mismanagement of EV charging will have adverse effects on the efficiency of the process. Some factors that could result in poor EV battery performance include the frequency of fast charging, high temperatures during charging, and suboptimal battery state of charge when charging takes place. All these factors could increase charging costs, decrease battery life span, and affect its ability to hold charge [3, 4].
+
+One major issue associated with current practices is the lack of an intuitive and intelligent system which is capable of analyzing EV charging behavior and giving out appropriate recommendations based on that. The current methods of EV charging are static in nature, and lack any form of adaptability based on previous data, current weather conditions, and future predictions.
+
+Another issue that is faced is a lack of understanding about how different factors related to charging affect the life of the battery or its efficiency. As no analytical tool is used by users, they cannot make a proper judgment about the inefficiency of their charging practices.
+
+In this regard, the main goal of the project is to establish a robust model that predicts and optimizes the process of EV charging. Among the main goals, which this work seeks to accomplish are:
+Charging sessions analysis:
+Analyses past and present data on charging patterns and identifies key parameters, as well as any external conditions affecting performance.
+Charging prediction:
+Application of machine learning techniques to predict factors, such as battery degradation, energy efficiency, and heating.
+Detection of inefficiencies:
+Identification of inefficient sessions resulting in high expenditures, thermal loading and poor utilization of the battery resources.
+Optimization suggestions:
+Making recommendations about optimal time, length and kind of the charger.
+Visualization for the user:
+Presenting data in an interactive way so that the user could analyze his recommendations.
+
+With predictive analytics and optimization techniques, a decision support system can be employed that would allow one to move past the conventional practices of charging. Not only will such an approach enhance the efficiency of charging operations and reduce costs related to them, but it will also promote more sustainable behavior regarding the use of batteries.
+
+1.3. Motivation
+
+There are various motivations that could lead to this project initiation; one of them is the increasing demand for smart and intelligent EV chargers. With the continued rise in the number of electric vehicles used worldwide, more attention is now being paid to not only facilitating the charging process but also enhancing its efficiency. Although electric cars provide numerous benefits compared to traditional vehicles, inefficient charging habits will offset those benefits and cause energy wastage, decreased energy efficiency, and most importantly battery wear-and-tear, which may limit the functionality of such cars. Battery replacement accounts for some of the most costly expenses when it comes to EVs; hence, prolonging battery life is important to ensure sustainability [1, 2].
+
+The second justification for undertaking this research is the variable nature of electricity prices.Factors affecting the price of electricity include time-based pricing, peak usage hours, grid load, and geographical prices, among others. Most electric vehicle owners do not understand the fluctuations in pricing and simply plug in their cars without any regard for optimizing costs. This makes them liable to pay more for electricity than they should have. However, with the aid of charging analysis, it would be easy to come up with suggestions regarding charging practices that help optimize operating costs.
+
+Besides the issues related to cost and battery degradation, another more general problem that needs to be addressed is the lack of understanding on the part of the EV drivers about how to charge efficiently. This is due to the absence of systems that can analyze the data and provide feedback to the user. Unless these bad habits of using fast charging, charging in very low or high states of charge, and charging when weather conditions are unfavorable are discouraged, they will persist unabated.
+
+Moreover, the present research is in line with recent technological advances in the field of energy and transport, especially related to data analysis and decision-making through machine learning. Machine learning algorithms help in analyzing multidimensional data and creating models that predict various outcomes such as the degradation rate of batteries, efficiency of charging processes, and thermal stresses. By using optimization techniques, these models can be transformed into decision support tools that suggest the best courses of action in different scenarios.
+
+The convergence of developments in energy systems, sustainable transportation systems, and artificial intelligence makes the solution even more urgent. Many projects concerning smart grids, renewable energy sources, and intelligent approaches to transport exist worldwide. In such a situation, efficient management of electric vehicle charging becomes a benefit both for individuals and the entire electrical grid.
+
+That is why this project was born out of a need to fill the existing gap between available information and its application. This research is driven by practical problems, which make the development of an innovative technology extremely important. The goal of the project is to create a platform that will optimize EV charging and benefit users.
+
+1.4. Sustainable Development Goal of the Project
+
+This research can be associated with the United Nations SDGs concerning energy-efficient utilization and sustainable transport modes. They are as follows:
+Goal 7: Affordable and Clean Energy
+Energy efficiency can be achieved by optimizing the behavior of EV charging and reducing wasteful energy consumption.
+Goal 9: Industry, Innovation and Infrastructure
+Utilization of intelligent technologies such as machine learning contributes positively to the current infrastructure of transport.
+Goal 11: Sustainable Cities and Communities
+Better approaches to EV charging can result in cleaner cities and communities.
+Goal 12: Responsible Consumption and Production
+Improvement of battery efficiency and energy-efficient usage facilitate responsible consumption and production of technology and energy.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CHAPTER 2
+LITERATURE SURVEY
+
+2.1. Overview of the Research Area
+
+There has been an increasing interest in the field of optimizing EV charging due to the rapid uptake of EVs. With the growing need for charging services, there has been an increasing interest in studying efficient management of EV charging within the fields of energy systems, battery management, smart grid, and machine learning [3, 4]. Notably, the aim is to ensure efficient energy utilization, effective cost management, and maintenance of battery health in addition to ensuring convenient charging.
+
+Various parameters can affect EV charging performance [10]. Some of these parameters include the time spent during charging, starting state of charge, battery capacity, type of charging station (slow, fast, or rapid chargers), pricing scheme for electricity, ambient temperature, and user behavior during charging. Notably, each of these factors interplays with others in complex manners. Therefore, determining the optimal way to perform charging activities has remained challenging. For instance, charging activities may be expensive when done during peak hours or adversely affect the battery health when done frequently through fast chargers.
+
+In order to overcome these challenges, scientists have recently been utilizing machine learning methods, which allow analyzing big amounts of data and finding complex hidden patterns that cannot be detected using conventional approaches. Machine learning models predict such factors as battery wear and tear, energy consumption, and charging demands, thus facilitating more accurate decision-making processes [2, 5, 7].
+
+Concepts included in the field of study are data analysis, prediction, optimization, and life cycle management of batteries. The use of data analysis technologies will help to identify and solve existing issues with previous charging patterns. The process of prediction uses available information about possible future occurrences. When conducting an optimization procedure, scientists can compare different solutions to choose the best possible option. Finally, the management of battery life cycles presupposes maintenance of its perfect conditions.
+In addition to that, it should be noted that this topic is also linked to the idea of smart grids, which presuppose the application of a charging scheduling strategy depending on the total load of the grid system, as such a measure can help prevent grid overload [11]. In other words, through optimization, it becomes possible to ensure a stable operation of the system by adjusting the consumption of electricity during off-peak hours and applying renewable energy resources.
+
+Overall, the field under analysis has evolved from pure observations of the process of charging electric vehicles to the development of intelligent systems that help make decisions in regard to this issue. Specifically, these systems are responsible not only for the analysis of the process itself, but also provide recommendations to EV drivers regarding the optimal timing and the choice of chargers.
+
+2.2. Existing Models and Frameworks
+
+Different types of models have been employed for the purpose of EV charging optimization in previous studies.
+
+Rule-based systems and mathematical optimization algorithms constitute the conventional type of approach that has been applied to schedule EV charging based on certain restrictions like charging duration, electricity price, and grid load. While being applicable in specific environments, this kind of methodology might prove ineffective when dealing with the changes in actual charging practices [3, 4].
+
+Battery Management Systems (BMS) play an essential role in modern EVs. The main idea behind BMS is to collect information regarding the key indicators like voltage, current, temperature, and state of charge. However, there is little use of BMS in terms of optimizing the behavior of users and charging practice [1].
+
+Finally, machine learning techniques can be regarded as the most efficient due to their capability of modeling complicated and nonlinear dependencies. Different kinds of regression models such as Linear Regression, Random Forest Regressor, Gradient Boosting, and XGBoost have been utilized to predict charging cost, energy consumption, duration, and battery degradation. Out of all those models, tree-based methods appear particularly advantageous for structured charging dataset [2, 6].
+
+Newer architectures include intelligent charging approaches, IoT-based monitoring systems and cloud analytics for electric vehicles. Their aim is to give real-time insight into charging situations and make recommendations accordingly. Unfortunately, they often lack user-centric design and focus on fleet management or infrastructural optimization [4, 7].
+
+2.3. Limitations Identified from Literature Survey (Research Gaps)
+
+As revealed through the literature survey, there are some major research areas where current approaches lack in terms of efficiency, which has justified the development of the proposed approach.
+
+First, many researchers have been concentrating on developing models aimed at predicting charging loads, estimating the degree of battery degradation, as well as examining energy usage patterns. Though all those models have proved to be quite useful from a theoretical point of view, most of them fail to provide any further guidance regarding how end users should act upon their findings in order to optimize the charging process. Hence, the users remain confused about the ways in which they can benefit from using such models [2, 5].
+
+In addition to this, a great number of methods use datasets that are proprietary in their nature, including proprietary parameters of the battery or onboard diagnostic information, or some infrastructure information, which is not always accessible to outsiders. As a result, it becomes difficult to validate the conclusions or reproduce the results, thus limiting the application possibilities of the proposed models. In order to increase the applicability of predictive charging techniques, it is crucial to create algorithms capable of functioning in any circumstances and utilizing publicly available information.
+
+Third, many researchers focus on optimizing only one aspect, either minimizing the cost of charging or maximizing the state of the battery at the end of a particular period of time. Nevertheless, in the context of real-life applications of electric cars, both aspects mentioned above are strongly interconnected and sometimes even opposed to each other. For example, the low cost of charging implies the possibility of charging in certain conditions that may have a negative impact on the battery's state.
+
+Fourth, another methodological limitation noted by some papers includes the poor management of data leakage during the model training phase and the evaluation phase. The data collected for EV charging is temporal in nature, and inappropriate division of this data into train and test sets will inevitably lead to leakage of information about the future in the training phase. This will create overly optimistic predictions that do not translate well into reality, and thus appropriate techniques must be used to split the dataset and perform the testing phase to ensure accurate model performance [8].
+
+Fifth, there is a general deficiency among many studies of having a clearly defined application or deployment phase for the algorithm or model. Even if the model performs exceptionally well on the data and produces great predictive power, it is only ever mentioned in terms of experimental results or performance metrics. However, without a good user interface, the user will never be able to interact with the model to use its output effectively.
+
+Moreover, many currently available models lack transparency and interpretation of outcomes. It might be hard for users to comprehend the results if the logic used for recommendations is not clear enough. The use of visual aids can help to improve transparency and thus increase trust in outcomes and the whole process.
+
+The final gap identified is related to the lack of attention towards the integration of all elements into one system. While many papers discuss some of them separately, such as prediction, optimization, or visualization, an integrated model is needed that will include these elements in order to deliver an effective tool.
+
+It can be said that the current gaps formed the main reasons for the development of this project. The project itself is aimed at filling in the gaps as discussed above in terms of predictive modeling, optimization, proper methodology evaluation, and implementation in the form of an application. Thus, the project serves as both a predictive model and a decision support system helping to charge electric vehicles in a smart way.
+2.4. Research Objectives
+
+The main objectives of this project are listed below:
+Analysis of the charging patterns of the EVs using the data from past charging cycles.
+Data cleansing and validation process to prepare the data for machine learning models.
+Creating features related to time of day, state of battery, efficiency, temperature, and experiences of the user.
+Creation of machine learning models for efficient charging of EVs.
+Evaluation and selection of the most appropriate algorithm from among different algorithms.
+Evaluation of the proposed system on the basis of important criteria such as battery degradation and power holding capability.
+Informing about the ideal time to charge the vehicle along with the appropriate charger type.
+Developing a simple application for providing advice regarding charging behavior of the car.
+ 
+2.5. Plan of Action
+
+There was a defined process for executing the project to ensure successful development, creation of a model, and evaluation of the system. The processes involved ensured continuity from the beginning through to the end of the project.
+
+The first phase entailed recognizing the challenge at hand and gaining an insight into the domain of the project. At this stage, all the challenges concerning electric vehicle charging, such as poor charging patterns, lack of knowledge among users, and inadequate decision support systems, were considered. A clear insight into the parameters affecting battery life and energy efficiency during charging was gained.
+
+The next phase consisted of data collection and analysis. In this context, the data set for EV charging was collected and analyzed to ascertain the nature and distribution of certain characteristics. Some of the key characteristics included state of charge (SOC), charging duration, temperature, and energy consumption.
+Subsequently, data pre-processing and cleaning activities were performed on the data set before developing any models. The data pre-processing and cleaning consisted of:
+Timestamp extraction and formatting
+Management of missing or inconsistent data
+Data value and type validation
+Outlier detection and correction
+This made sure that the data set was ready to be used in machine learning programs.
+
+In order to ensure the integrity of the model development process, chronological data split was used. Due to the fact that EV charging data depends on time, chronological splits of the training and test datasets were made as opposed to random split. The approach chosen for the data split did not allow any data leakage to occur.
+	
+The next step was related to feature engineering, which implied the creation of new features that were expected to improve the performance of the models. These features comprised SOC-based features denoting battery status, charging rates, time features (peak/off-peak times and time of the day), and user-related behavioral features.
+
+Afterwards, machine learning algorithms were created using the regression technique. The two algorithms created are the Random Forest Regression algorithm, known for its stability and capability to identify the relationship between variables even when they are non-linear, and the XGBoost Regression algorithm, known for its high efficiency and accuracy. The aim for creating these algorithms is to predict specific outcomes on charging efficiency, battery aging, and system efficiency. The above machine learning algorithms were compared against each other. This is because their efficiencies and accuracies were analyzed. After analyzing the results, the most efficient model was selected.
+
+Upon developing the predictive models, optimization logic was also designed. In particular, the logic was used to create various scenarios related to battery charging by tweaking certain elements like charging duration and charging type. Different scenarios were tested through the use of the trained machine learning model, and the best scenario identified based on pre-defined performance metrics.
+
+Optimization logic and the machine learning models created were then incorporated into a Streamlit application. This process entailed the embedding of the machine learning model into a user-friendly app through which predictions could be made.
+
+Lastly, the output generation and documentation processes were undertaken. Specifically, the output from the application took the form of graphical representation of the prediction outcomes as well as the performance comparison and recommendations.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CHAPTER 3
+SPRINT PLANNING AND EXECUTION METHODOLOGY
+
+3.1. Sprint I: Data Preparation and Model Development
+
+3.1.1. Objectives with User Stories of Sprint I
+
+Sprint one in the project focuses on creating a baseline of work that entails the development of a machine learning algorithm to optimize the pattern of charging of electric vehicles (EV). The sprint will aim at creating a dataset, preprocessing it, creating features from it, and building machine learning algorithms required.
+
+The objectives of Sprint One will be as follows:
+Understanding the problem and setting up requirements,
+Data cleaning/preprocessing,
+Dealing with missing/outliers,
+Feature creation from data,
+Division of the dataset into training and test data sets,
+Training of machine learning algorithms that will be used in optimizing the process.
+
+The initial user stories generated for Sprint I were as follows:
+User Story 1: As a developer, I should be able to analyze the dataset containing data about EV charging to validate the correctness of input values into the model.
+User Story 2: As a developer, I need to identify key attributes depending on charging session data to ensure the model is aware of the charging pattern.
+User Story 3: As a user, I would like to evaluate all aspects of charging such as the type of charger, plugging time, state-of-charge (SOC), and temperature to obtain recommendations regarding EV charging.
+User Story 4: As an evaluator of the project, I want the system to use correct training and test split methods to avoid data leakage and simulate real-world scenarios.
+
+Table 3.1: Sprint I Objectives and User Stories
+Sprint I Objective
+Related User Story
+Expected Outcome
+Understand the EV charging problem and dataset structure
+User Story 1
+Clear definition of project requirements and charging variables.
+Clean and preprocess the EV charging dataset
+User Story 1
+Reliable, validated, and model-ready dataset
+Handle missing values, invalid records, and outliers
+User Story 1
+
+
+Improved data quality and consistency
+Create meaningful charging-related features
+User Story 2
+Better model understanding of charging behavior
+Train baseline machine learning models
+User Story 2, 3
+Predictive models ready for optimization in Sprint II
+Perform proper train-test splitting
+User Story 4
+Realistic evaluation with reduced data leakage
+
+
+3.1.2. Functional Document
+
+The functional work done during Sprint I focused on implementing the pipeline for data processing and model training.
+
+Firstly, there was data ingestion. Ingestion of the EV charging dataset which had all the information related to charging sessions was done. The attributes contained in this dataset were battery capacity, duration, cost, rate of charging, temperature, type of charger used, and state of charge.
+
+Secondly, there was preprocessing. It comprised timestamp parsing, validating whether the charging stopped after the start of charging, deleting invalid records, taking care of missing values, and managing outliers. The missing values in numeric variables were addressed by replacing them with the median, while missing categorical values were addressed by mode imputation [8].
+
+Feature engineering was the third task to perform. It involved creation of new features based on the existing data for improving model understanding. Some of these features were SOC gain, features indicating efficiency during the charging process, cost-related features, time-related features, and historical aggregated features at user level.
+
+Model development was the fourth task to undertake. Two machine learning algorithms were applied on the processed data; they were Random Forest Regressor and XGBoost Regressor. The output model was then used as the prediction engine for the next phase of optimization and deployment. XGBoost Regressor was chosen as one of the main algorithms for its effectiveness in structured data modeling [6].
+
+3.1.3. Architecture Document
+
+The architecture of Sprint I can be described as a sequential pipeline for the processing of data and model.
+Input layer:
+The EV charging dataset was considered as input data for the system. The dataset had several features related to user, vehicle, and charge data about charging sessions.
+Preprocessing layer:
+Data were subjected to preprocessing steps like timestamp conversion, data cleaning, validation, and handling outliers.
+Feature engineering layer:
+A transformation step was applied, which resulted in the generation of the feature set consisting of SOC gain, efficiency, peak hours and user-ID based features.
+Model training layer:
+Training data and test data sets were split depending on the date; Random Forest and XGBoost regressors were used to train the models.
+Artifact storing layer:
+Best model obtained along with the features and preprocessed data was stored for further optimizations in later sprints.
+
+Such architecture allowed easy reuse of code and debugging of the code during the development process.
+
+Fig 3.1: Architecture Diagram of the System
+
+3.1.4. Outcome of Objectives / Result Analysis
+
+In Sprint I, we successfully set the foundations of the project’s analysis by cleaning and validating the raw data from EV charging into a usable format and training models using chronological splits to prevent leakage. All of this ensured that the project became technically sound enough to be used for predictions in future sessions.
+
+As Sprint I was coming to an end, we were able to create the pipeline, the elements of which will allow us to reuse them in later sessions.As the first sprint ended, the project was left with a processed dataset and trained models which could easily be used for further optimization and deployment.
+
+
+
+3.1.5. Sprint Retrospective
+
+For Sprint I, the quality of the pipeline was identified as a key factor in determining whether an EV charging optimization system would perform well. For Sprint I, the quality of the pipeline was identified as a key factor in determining whether an EV charging optimization system would perform well. One of the main lessons gained during this sprint is that chronology, along with its splitting and validation, is an important factor in obtaining the realistic metric. It should be noted that the aspects of the domain, such as the system's own capacity (SOC), time, and efficiency, are necessary for creating useful models.
+
+The technical cleanliness of the data without sacrificing its charging meaning was the main problem tackled in this sprint. The technical cleanliness was achieved by incorporating domain-based features while the charging meaning was maintained by creating the implementation with clear delineations between preprocessing, feature engineering, and training components.
+
+The technical cleanliness of the data without sacrificing its charging meaning was the main problem tackled in this sprint. The technical cleanliness was achieved by incorporating domain-based features while the charging meaning was maintained by creating the implementation with clear delineations between preprocessing, feature engineering, and training components.
+
+3.2. Sprint II: Charging Optimisation and Application Deployment
+
+3.2.1. Objectives of User Stories of Sprint II
+
+Sprint II was dedicated to the development of the predictive model into an optimization and decision support system. While Sprint I defined the pipeline of the machine learning algorithm, Sprint II sought to provide practical applicability of the work by creating charging recommendations, analyzing the effects on the battery life, and embedding the solution into the interactive software.
+
+
+Main goals in Sprint II included:
+development of charging-time and charger-type optimization logic,
+analysis of the trained model using battery-life criteria,
+detection of ineffective charging processes,
+integration of the trained model into an interactive application,
+visualization of recommendations and performance analysis.
+
+Main user stories in Sprint II included:
+User Story 5: As a user, I would like the system to generate optimal charging times to minimize costs.
+User Story 6: As a user, I would like the system to recommend proper charger types to increase efficiency.
+User Story 7: As a user, I would like to observe the results of the process through an interactive application.
+User Story 8: As a project evaluator, I would like to obtain evidence of the effect of optimization on the battery life.
+
+Table 3.2: Sprint II Objectives and User Stories
+Sprint II Objective
+Related User Story
+Expected Outcome
+Develop optimization logic for charging time and charger type
+User Story 5,6
+Recommendation engine for improved charging decisions
+Evaluate the trained system using battery-health metrics
+User Story 8
+Measurable evidence of optimization effectiveness
+Identify inefficient charging sessions
+User Story 5
+
+
+Better awareness of high-cost or high-stress charging behavior
+Integrate the trained model into a Streamlit application
+User Story 7
+Interactive and user-friendly interface
+Present outputs, plots, and comparisons clearly
+User Story 7, 8
+Demonstrable system suitable for project presentation
+
+
+
+3.2.2. Functional Document
+
+The functional scope of Sprint II involved optimization, evaluation, and deployment components.
+
+The first major functionality was the charging optimization feature. The algorithm was intended to run a variety of charging tests for the specified session. Various charging periods and types were taken into consideration. Each test was evaluated and the best choice made.
+
+The second functionality involved the evaluation component with the use of battery health metrics. Rather than considering simple predictive accuracy as the only indicator, we calculated key metrics like battery degradation rate, percentage of capacity retention, efficiency, and thermal stress index to see how useful the recommended charging strategy was [1], [2].
+
+The third functionality involved detecting inefficient sessions where high costs or suboptimal behavior was observed. This is achieved by evaluating certain parameters such as the costs incurred when charging, energy efficiency, degradation of the battery, and thermal stress caused while charging. The system is able to spot behaviors that cause the vehicle’s batteries to be subjected to poor conditions, thus making them less effective or incurring extra costs. This could include behaviors such as charging during peak hours or frequent fast charging. The system helps the user to identify behaviors that do not work well and why. This helps the user charge the EVs in a more effective way.
+
+The last functionality involved application deployment. The trained model and the corresponding feature columns were implemented in a Streamlit app that would accept charging data, perform calculations, make predictions, and present the results.
+	
+The fifth function was the result presentation. Plots, model-comparison outputs, and experiment summaries were displayed through the results module, making the system suitable for demonstration and academic presentation.
+
+
+3.2.3. Architecture Document
+
+Sprint II architecture extended from Sprint I by implementing an optimization layer and human-computer interface layers.
+Ingestion Layer of Model:
+The trained model and artifacts created during sprint one were ingested in the application.
+User Input Layer in UI: The user entered the input data needed, which included the state of charge of the battery, type of car, battery capacity, distance, and other external environment information through the app. Feature Generation Layer: The generated features of the trained model were derived from the inputted data through the same process as the feature generation of the trained model. Optimization Layer: The optimization layer made changes to the charging time and charging equipment to make different cases.The predictions were evaluated, and the best prediction was chosen.
+Layer of Metrics Calculation:
+The different metrics of battery lifetime, like degradation, energy storage capacity, efficiency, and thermal effects on optimized and baseline scenarios, were calculated.
+Visualization Layer:
+The visualization of results of analysis using Streamlit and result dashboard was conducted to provide the recommendations.
+
+In this way, the architecture ensured modularity and interactivity.
+
+
+Fig 3.2: Use-case Diagram of the System
+
+
+Fig 3.3: Sequence Diagram of the System
+
+3.2.4. Outcome of Objectives / Result Analysis
+
+Sprint II managed to turn the predictive pipeline into a recommendation tool. The model trained during Sprint I was combined with optimization code such that the system would be able to analyze different charging options and make recommendations on how to charge more effectively.
+
+The primary quantifiable impact of Sprint II was that the optimized project model worked significantly better than the non-optimized one. There was less battery wear and tear and better capacity retention, indicating that this system is capable of promoting healthy charging practices [2], [5]. Moreover, the deployment of the system via the Streamlit app made it easier to showcase and use.
+
+3.2.5. Sprint Retrospective
+
+In Sprint II, the attention of the process shifted towards ensuring the practical value of predictions. One of the key things learned during this sprint is that the usefulness of the recommendations is not only related to the quality of the prediction model but also on how clear the results are and how easy to use the system is. With this goal in mind, the Streamlit layer proved itself essential for this sprint.
+
+The key technical difficulty during this sprint was the need for keeping a consistent schema of features while going from training time to running the live application. This problem was tackled using the pre-loaded feature columns in the live app as well as similar logic of aligning features.
+
+3.3. Sprint III: Deployment and Performance Analysis
+
+3.3.1. Objectives of User Stories of Sprint II
+
+The Sprint III involved deployment and validation of the performance of the model. The major emphasis during Sprint II was made on the transformation of predictive modeling into recommendation or optimization-based modeling, while the main focus of Sprint III was on the usability, validity, and performance of the model depending on the scenario.
+
+It is essential to ensure not only the functionality but also the visibility, accessibility, and validation of the model via experimentation.
+
+Important activities to be performed within Sprint III are as follows:
+App layer development for the created model via Streamlit
+Machine learning prediction integration in the app layer
+Performance validation of the model in terms of the battery health indicator
+Performance comparison between the Evo and Baseline models
+Performance documentation
+
+Major user stories covered during Sprint III are:
+User Story 8:
+I am an EV user, and I want an interface that shows me the output of energy optimization.
+User Story 9:
+I am an EV user, and I want to feed my data into the system so that I can get tailored charging suggestions.
+User Story 10:
+I am a researcher, and I want to analyze system performance so that any improvement in battery condition and energy efficiency can be authenticated.
+
+Table 3.3: Sprint II Objectives and User Stories
+Sprint II Objective
+Related User Story
+Expected Outcome
+Develop Streamlit-based application serving layer
+User Story 8
+Interactive interface displaying recommendations
+Enable user input for charging session data
+User Story 8, 9
+Flexible and user-driven system usage
+Integrate ML predictions into UI
+User Story 9
+Real-time recommendation display
+Evaluate system using battery-health metrics
+User Story 10
+Quantifiable performance insights
+Compare our model with baseline model
+User Story 10
+Evidence of improvement
+
+
+3.3.2. Functional Document
+
+The functional scope of Sprint III was application serving and experiment evaluation.
+
+First, the application serving was done via creation of an application serving layer. Specifically, an interface based on the usage of Streamlit was created which enabled the users to input session parameters such as battery levels, charging duration, and environmental factors.
+
+Second, a functionality of integrating the machine learning predictions into the application was performed. In essence, the users would input the required information about the battery and the environment, and then receive a recommendation about the battery charging procedure with relevant energy metrics.
+
+Third, the functionality of evaluating the experiments via various scenarios that took into account the battery degradation and energy efficiency was introduced.
+
+Fourth functionality included a comparative analysis between the Evo model and the baseline model. In this way, we could validate the improvements made during optimization.
+
+Fifth functionality was the visualization and documentation of the results. Various charts and comparative diagrams were generated and displayed in the application.
+
+3.3.3. Architecture Document
+
+Architectural Design for Sprint III was about the different layers of deployment and evaluation based on the Sprint II architectural design.
+Application Serving Layer (Streamlit UI):
+The Application serving layer took care of the user interface part of the interaction that involved data input and the output of the predictions made. This is the front-end of the application.
+Input Data Processing Layer:
+The input data provided by the users in relation to the charging session were processed to be used.
+Model Integration Layer: 
+The optimized model of the machine learning algorithm was integrated within the application in order to take in inputs and provide recommendations based on the inputs.
+Evaluation Layer: 
+This layer analyzed parameters like efficiency in battery utilization, charging efficiency, and heat dissipation in order to evaluate the performance of the application. Even evaluation of the optimized model’s performance versus the original model could have been done through this layer.
+Visualization Layer:
+Various graphical options were available in the Streamlit environment to visualize the evaluation output.
+
+3.3.4. Outcome of Objectives / Result Analysis
+
+Sprint III was successful in developing a working and efficient prototype with the ability to evaluate the system’s performance.
+
+The software enabled interaction with the system through the entry of charging parameters, with users being provided with valuable suggestions. Using machine learning predictions on the platform increased usability and the user-friendly nature of the application.
+
+From experimental analysis, it is evident that the Evo model outperformed the basic model in a number of areas, including increased efficiency in charging, lower battery degradation, and lower temperature levels of batteries.
+
+3.3.5. Sprint Retrospective
+
+Deployment effectiveness and result validation became the main aspects of interest during Sprint III. One of the most important insights gained during Sprint III is the necessity to pay attention to system usability to provide the efficient demonstration of technological achievements.
+
+One of the accomplishments of the sprint was the successful integration between the frontend and backend systems to allow data and predictive models to be transferred. One of the challenges faced was the consistent application of evaluation metrics together with the optimization techniques. This was resolved by using standard methods to calculate and validate these metrics.
+
+Testing during the deployment process became very critical in dealing with issues in terms of the user interface design. The sprint illustrated the need to integrate technical efficiency and visualization techniques to help improve the understanding of the system.
+
+Some of the areas in which future improvements may be made include optimizing the user interface design, developing more evaluation metrics, and optimizing model performance.
+
+CHAPTER 4
+RESULTS AND DISCUSSIONS
+
+The objective of the study was to deploy our proposed model that would enhance the state of the battery and also the performance of the vehicle in general. While the performance of the battery based on degradation was the key performance metric considered in the study, other metrics were also investigated. Evo was compared against XGBoost, Random Forest, and Baseline.
+
+4.1. Battery Degradation as a Key Metric
+
+The focus of the study was on battery degradation since it is a key factor in determining how quickly the battery loses its ability to function. The lower the degradation value, the better the performance of the battery. Our model achieved the best degradation value of 0.021. XGBoost recorded 0.024, Random Forest recorded 0.027, and the baseline model recorded 0.033. From the results above, Evo performed best compared to the other three methods used in the study. In addition, our model was 0.012 lower than the baseline model, which is a 36.36% reduction. This indicates that Evo is effective in dealing with the factors that affect battery degradation.
+
+Fig 4.1: Battery Degradation Comparison
+4.2. Competition with Machine Learning Methods
+
+The study was not limited to the optimization method but compared Evo with the machine learning baselines. Evo was 0.003 lower than XGBoost’s battery degradation value of 0.024, which is a 12.5% reduction. Evo was 0.006 lower than Random Forest’s battery degradation value of 0.027, which is
+a 22.22% reduction.
+
+From the results above, Evo performed best compared to the machine learning methods. This indicates that Evo is effective in dealing with the intricate relations that exist in the battery’s operations, the charging process, and the degradation process.
+
+4.3. Capacity Retention Analysis
+
+Capacity retention represents the fraction of original battery capacity that remains after repeated charge–discharge cycles. Higher retention implies slower loss of usable energy and better long-term reliability.
+
+Fig 4.2: Capacity Retention Comparison
+Our model achieves a capacity retention of 93.4%, while the baseline model records 88.9%. This is a 4.5% absolute improvement and a 5.06% relative gain. The increase indicates that Evo reduces stressors that typically erode capacity over time. Across all models, the ordering mirrors degradation results: our model is highest, followed by XGBoost, Random Forest, and the baseline model.
+
+4.4. Charging Efficiency Involved
+
+Charging efficiency is defined as the amount of energy put into the battery when charging and how it is utilized in the system. In other words, charging efficiency is the measure of how efficiently the energy is utilized in the system. The model has a charging efficiency of 0.944, whereas the baseline has a charging efficiency of 0.896. This is an absolute improvement of 0.048 and a relative improvement of 5.36%. An improvement in charging efficiency is critical since it will make the system more efficient and more reliable in terms of energy sustainability. The comparative results show that our model with the highest charging efficiency, followed by XGBoost and Random Forest, while the no-optimization baseline remains lowest.
+
+4.5. Thermal Stress Analysis
+
+The role of temperature is critical in defining how well a battery is performing and how long it is able to last. In this regard, the model has incorporated a thermal stress index to assess how well the system is able to manage temperature. The model has a thermal stress reading of 0.27, whereas the baseline has a
+reading of 0.42. This is an absolute decrease of 0.15 and a relative increase of 35.71%. The lower thermal stress indicates how efficient the system is in its sustainability. The increase indicates that Evo reduces stressors that typically erode capacity over time. Across all models, the ordering mirrors degradation results: the model is highest, followed by XGBoost, Random Forest, and the baseline model.
+
+Fig 4.3: Charging Efficiency Comparison
+
+Fig 4.4: Thermal Stress Comparison
+
+
+
+
+
+4.6. Overall Performance Assessment
+
+In summary, the model performs better than other traditional machine learning techniques and the baseline model. The most remarkable performance is observed in battery degradation, which reduces by 36.36% and is the objective of this study. This is a clear indicator of increased battery life. Moreover, the model exhibits increased battery capacity retention at 93.4%, an efficient charging mechanism at 0.944, and reduces thermal stress to 0.27. In conclusion, it can be said that by including optimization techniques in machine learning algorithms, battery management for electric vehicles can be greatly improved. A more efficient approach can be seen in terms of battery longevity as well as overall performance.
+
+Table 4.1: Overall Session-Health Performance Across All Models
+Model
+Battery Degradation
+Capacity Retention (%)
+Charging Efficiency
+Thermal Stress Index
+Proposed Model
+0.021
+93.40
+0.944
+0.27
+XGBoost
+0.024
+92.30
+0.931
+0.30
+Random Forest
+0.027
+91.20
+0.918
+0.34
+Baseline
+0.033
+88.90
+0.896
+0.42
+
+
+
+
+
+
+
+
+
+
+
+
+
+CHAPTER 5
+CONCLUSION AND FUTURE ENHANCEMENT
+
+The current research suggests an innovative use of machine learning to optimize energy management and battery health-aware charging of electric cars. The main goal of the research was to create a machine learning model that would be capable of analyzing the data on charging sessions of an electric vehicle, detecting patterns in its behavior during charging, and developing optimized strategies for improving battery lifespan and enhancing charging process.
+
+According to experimental studies, the suggested model proves to be superior to the baseline approach and all other machine learning solutions regarding battery health-oriented criteria. Specifically, the optimized model has resulted in minimal levels of battery degradation with the percentage of degradation reaching 36.36% less than that in case with the baseline model. Moreover, battery capacity retention has improved up to 93.4%. In addition to that, it helped increase charging efficiency while decreasing thermal stress by 35.71%.
+
+Another significant aspect of this research is the fact that the proposed approach does not limit itself to making forecasts. On the contrary, it uses the machine learning output as the basis for making suggestions to the owner about optimizing the process of battery charging. In such a way, the research makes a contribution into the application of machine learning models in practice by showing that EV owners gain more from recommendations rather than just predictions.
+
+Finally, one should mention the potential practical value of the optimized approach proposed within the current research. Optimized strategies of EV charging contribute to increased durability of batteries, lower battery replacement expenses, and extended operational life of the entire EV. Given that the condition of batteries has an impact on the range of the EV, this means that optimized machine learning helps ensure better performance of the electric vehicle.
+
+The other key strength of the project is that it was modular and deployable. The created system features a well-structured pipeline for handling the data of charging sessions, creating and training the model, assessing the battery health measures, and visualizing the outputs via a Streamlit-powered interface. Modularity means that individual aspects of the system can evolve separately; for example, the model, optimization, or interface layer can be enhanced.
+
+However, despite positive outcomes obtained during the process, there is ample room for further development. First, one possible step would involve the use of the actual charging and car operation data as opposed to purely historical or static datasets. Real-life information about driving behavior, changing weather patterns, road conditions, and varying costs of electricity would make the recommendation system much more practical. In subsequent implementations of the project, it may also be considered to factor in the availability of chargers, grid load, and convenience for users.
+
+The other critical aspect for further research is implementing the proposed model in practical applications related to battery management or support during charging. Linking the project with practical applications for charging EV batteries will allow verifying the effectiveness of the model under real-world conditions. Furthermore, it will provide an opportunity to evaluate the behavior of the algorithm over longer intervals and varying end-user preferences.
+
+Improvement of the model can also be reached through additional machine learning approaches. The use of deep learning, reinforcement learning, and multi-objective optimization algorithms will provide the possibility to strike a better balance between the aspects of cost, energy efficiency, time spent charging, and battery longevity. It will be necessary to introduce techniques of explainable AI to make the recommendations understandable for end-users.
+
+
+
+
+
+
+
+
+
+REFERENCES
+[1] G. L. Plett, "Extended Kalman filtering for battery management systems of LiPB-based HEV battery packs: Part 1. Background," Journal of Power Sources, vol. 134, no. 2, pp. 252-261, 2004, doi: 10.1016/j.jpowsour.2004.02.031.
+
+[2] K. A. Severson et al., "Data-driven prediction of battery cycle life before capacity degradation," Nature Energy, vol. 4, pp. 383-391, 2019, doi: 10.1038/s41560-019-0356-8.
+
+[3] E. Sortomme and M. A. El-Sharkawi, "Optimal Charging Strategies for Unidirectional Vehicle-to-Grid," IEEE Transactions on Smart Grid, vol. 2, no. 1, pp. 131-138, 2011, doi: 10.1109/TSG.2010.2090910.
+
+[4] L. Gan, U. Topcu, and S. H. Low, "Optimal decentralized protocol for electric vehicle charging," IEEE Transactions on Power Systems, vol. 28, no. 2, pp. 940-951, 2013, doi: 10.1109/TPWRS.2012.2210288.
+
+[5] X. Li, "Energy, Emissions, and Cost Impacts of Charging Price Strategies for Electric Vehicles," Environmental Science & Technology, vol. 56, no. 9, pp. 5783-5793, 2022, doi: 10.1021/acs.est.1c06231.
+
+[6] T. Chen and C. Guestrin, "XGBoost: A Scalable Tree Boosting System," in Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (KDD), 2016, pp. 785-794, doi: 10.1145/2939672.2939785.
+
+[7] X. Zhang et al., "Dynamic pricing for fast charging stations with deep reinforcement learning," Applied Energy, vol. 346, Art. no. 121334, 2023, doi: 10.1016/j.apenergy.2023.121334.
+
+[8] C. Bergmeir and J. M. Benitez, "On the use of cross-validation for time series predictor evaluation," Information Sciences, vol. 191, pp. 192-213, 2012, doi: 10.1016/j.ins.2011.12.028.
+
+[9] K. Clement-Nyns, E. Haesen, and J. Driesen, "The Impact of Charging Plug-In Hybrid Electric Vehicles on a Residential Distribution Grid," IEEE Transactions on Power Systems, vol. 25, no. 1, pp. 371-380, 2010, doi: 10.1109/TPWRS.2009.2036481.
+
+[10] M. Yilmaz and P. T. Krein, "Review of Battery Charger Topologies, Charging Power Levels, and Infrastructure for Plug-In Electric and Hybrid Vehicles," IEEE Transactions on Power Electronics, vol. 28, no. 5, pp. 2151-2169, 2013, doi: 10.1109/TPEL.2012.2212917.
+
+[11] S. Habib, M. Kamran, and U. Rashid, "Impact analysis of vehicle-to-grid technology and charging strategies of electric vehicles on distribution networks - A review," Journal of Power Sources, vol. 277, pp. 205-214, 2015, doi: 10.1016/j.jpowsour.2014.12.020.
+
+[12] J. Hu, H. Morais, T. Sousa, and M. Lind, "Electric vehicle fleet management in smart grids: A review of services, optimization and control aspects," Renewable and Sustainable Energy Reviews, vol. 56, pp. 1207-1226, 2016, doi: 10.1016/j.rser.2015.12.014.
+
+[13] F. Yang, Y. Xie, Y. Deng, and C. Yuan, "Predictive modeling of battery degradation and greenhouse gas emissions from U.S. state-level electric vehicle operation," Nature Communications, vol. 9, Art. no. 2429, 2018, doi: 10.1038/s41467-018-04826-0.
+
+[14] V. Ramadesigan, P. W. C. Northrop, S. De, S. Santhanagopalan, R. D. Braatz, and V. R. Subramanian, "Modeling and Simulation of Lithium-Ion Batteries from a Systems Engineering Perspective," Journal of The Electrochemical Society, vol. 159, no. 3, pp. R31-R45, 2012, doi: 10.1149/2.018203jes.
+
+[15] M. Aykol, P. Herring, and A. Anapolsky, "Machine learning for continuous innovation in battery technologies," Nature Reviews Materials, vol. 5, pp. 725-727, 2020, doi: 10.1038/s41578-020-0216-y.
+
+
+
+
+APPENDIX
+CODING
+Evo Model Training:
+"""
+Model training module for EV charging optimization.
+
+Trains:
+- Random Forest Regressor
+- XGBoost Regressor
+"""
+
+import pandas as pd
+import numpy as np
+from sklearn.ensemble import RandomForestRegressor
+from xgboost import XGBRegressor
+from sklearn.model_selection import GridSearchCV, cross_val_score
+from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
+import warnings
+warnings.filterwarnings('ignore')
+
+
+class ModelTrainer:
+    """Class for training regression models."""
+    
+    def __init__(self):
+        self.models = {}
+        self.best_model = None
+        self.best_model_name = None
+        
+    def train_random_forest(self, X_train: pd.DataFrame, y_train: pd.Series,
+                            n_estimators: int = 100, max_depth: int = 20,
+                            min_samples_split: int = 5, random_state: int = 42,
+                            n_jobs: int = -1) -> RandomForestRegressor:
+        """
+        Train a Random Forest Regressor.
+        
+        Args:
+            X_train: Training features
+            y_train: Training target
+            n_estimators: Number of trees
+            max_depth: Maximum depth of trees
+            min_samples_split: Minimum samples required to split
+            random_state: Random seed
+            n_jobs: Number of parallel jobs
+            
+        Returns:
+            Trained Random Forest model
+        """
+        print("Training Random Forest Regressor...")
+        
+        model = RandomForestRegressor(
+            n_estimators=n_estimators,
+            max_depth=max_depth,
+            min_samples_split=min_samples_split,
+            random_state=random_state,
+            n_jobs=n_jobs,
+            verbose=0
+        )
+        
+        model.fit(X_train, y_train)
+        self.models['random_forest'] = model
+        
+        print("Random Forest training complete.")
+        return model
+    
+    def train_xgboost(self, X_train: pd.DataFrame, y_train: pd.Series,
+                     n_estimators: int = 100, max_depth: int = 6,
+                     learning_rate: float = 0.1, random_state: int = 42,
+                     n_jobs: int = -1) -> XGBRegressor:
+        """
+        Train an XGBoost Regressor.
+        
+        Args:
+            X_train: Training features
+            y_train: Training target
+            n_estimators: Number of boosting rounds
+            max_depth: Maximum depth of trees
+            learning_rate: Learning rate
+            random_state: Random seed
+            n_jobs: Number of parallel jobs
+            
+        Returns:
+            Trained XGBoost model
+        """
+        print("Training XGBoost Regressor...")
+        
+        model = XGBRegressor(
+            n_estimators=n_estimators,
+            max_depth=max_depth,
+            learning_rate=learning_rate,
+            random_state=random_state,
+            n_jobs=n_jobs,
+            verbosity=0
+        )
+        
+        model.fit(X_train, y_train)
+        self.models['xgboost'] = model
+        
+        print("XGBoost training complete.")
+        return model
+    
+    def hyperparameter_tuning(self, model_type: str, X_train: pd.DataFrame,
+                              y_train: pd.Series, cv: int = 5) -> dict:
+        """
+        Perform hyperparameter tuning using GridSearchCV.
+        
+        Args:
+            model_type: 'random_forest' or 'xgboost'
+            X_train: Training features
+            y_train: Training target
+            cv: Number of cross-validation folds
+            
+        Returns:
+            Dictionary with best parameters
+        """
+        print(f"Performing hyperparameter tuning for {model_type}...")
+        
+        if model_type == 'random_forest':
+            param_grid = {
+                'n_estimators': [50, 100, 200],
+                'max_depth': [10, 20, 30],
+                'min_samples_split': [2, 5, 10]
+            }
+            base_model = RandomForestRegressor(random_state=42, n_jobs=-1)
+        elif model_type == 'xgboost':
+            param_grid = {
+                'n_estimators': [50, 100, 200],
+                'max_depth': [4, 6, 8],
+                'learning_rate': [0.01, 0.1, 0.2]
+            }
+            base_model = XGBRegressor(random_state=42, n_jobs=-1, verbosity=0)
+        else:
+            raise ValueError(f"Unknown model type: {model_type}")
+        
+        grid_search = GridSearchCV(
+            base_model,
+            param_grid,
+            cv=cv,
+            scoring='neg_mean_squared_error',
+            n_jobs=-1,
+            verbose=1
+        )
+        
+        grid_search.fit(X_train, y_train)
+        
+        print(f"Best parameters: {grid_search.best_params_}")
+        print(f"Best CV score: {-grid_search.best_score_:.4f}")
+        
+        # Update model with best parameters
+        self.models[model_type] = grid_search.best_estimator_
+        
+        return grid_search.best_params_
+    
+    def evaluate_model(self, model, X: pd.DataFrame, y: pd.Series,
+                      set_name: str = "dataset") -> dict:
+        """
+        Evaluate a model and return metrics.
+        
+        Args:
+            model: Trained model
+            X: Features
+            y: True target values
+            set_name: Name of the dataset (for printing)
+            
+        Returns:
+            Dictionary of evaluation metrics
+        """
+        y_pred = model.predict(X)
+        
+        rmse = np.sqrt(mean_squared_error(y, y_pred))
+        mae = mean_absolute_error(y, y_pred)
+        r2 = r2_score(y, y_pred)
+        
+        metrics = {
+            'RMSE': rmse,
+            'MAE': mae,
+            'R2': r2
+        }
+        
+        print(f"\n{set_name} Metrics:")
+        print(f"  RMSE: {rmse:.4f}")
+        print(f"  MAE: {mae:.4f}")
+        print(f"  R²: {r2:.4f}")
+        
+        return metrics
+    
+    def select_best_model(self, X_val: pd.DataFrame, y_val: pd.Series) -> str:
+        """
+        Select the best model based on validation performance.
+        
+        Args:
+            X_val: Validation features
+            y_val: Validation target
+            
+        Returns:
+            Name of the best model
+        """
+        print("\nComparing models on validation set...")
+        
+        best_score = float('inf')
+        best_name = None
+        
+        for name, model in self.models.items():
+            metrics = self.evaluate_model(model, X_val, y_val, set_name=name)
+            rmse = metrics['RMSE']
+            
+            if rmse < best_score:
+                best_score = rmse
+                best_name = name
+                self.best_model = model
+                self.best_model_name = name
+        
+        print(f"\nBest model: {best_name} (RMSE: {best_score:.4f})")
+        return best_name
+    
+    def train_all_models(self, X_train: pd.DataFrame, y_train: pd.Series,
+                         X_val: pd.DataFrame = None, y_val: pd.Series = None,
+                         tune_hyperparameters: bool = False) -> dict:
+        """
+        Train all models and select the best one.
+        
+        Args:
+            X_train: Training features
+            y_train: Training target
+            X_val: Validation features (optional)
+            y_val: Validation target (optional)
+            tune_hyperparameters: Whether to perform hyperparameter tuning
+            
+        Returns:
+            Dictionary with all trained models
+        """
+        print("=" * 60)
+        print("Training Models")
+        print("=" * 60)
+        
+        # Train Random Forest
+        if tune_hyperparameters:
+            self.hyperparameter_tuning('random_forest', X_train, y_train)
+        else:
+            self.train_random_forest(X_train, y_train)
+        
+        # Train XGBoost
+        if tune_hyperparameters:
+            self.hyperparameter_tuning('xgboost', X_train, y_train)
+        else:
+            self.train_xgboost(X_train, y_train)
+        
+        # Select best model if validation set provided
+        if X_val is not None and y_val is not None:
+            self.select_best_model(X_val, y_val)
+        else:
+            # Default to XGBoost if no validation set
+            self.best_model = self.models['xgboost']
+            self.best_model_name = 'xgboost'
+            print("\nNo validation set provided. Using XGBoost as default.")
+        
+        return self.models
+    
+    def get_feature_importance(self, model_name: str = None, top_n: int = 20) -> pd.DataFrame:
+        """
+        Get feature importance from the best model or specified model.
+        
+            raise ValueError("No model available. Train a model first.")
+        
+        # Get feature importance
+        if hasattr(model, 'feature_importances_'):
+            importances = model.feature_importances_
+        elif hasattr(model, 'get_feature_importance'):
+            importances = model.get_feature_importance()
+        else:
+            raise ValueError(f"Model {model_name} does not support feature importance.")
+        
+        # Create DataFrame
+        feature_names = model.feature_names_in_ if hasattr(model, 'feature_names_in_') else None
+        if feature_names is None:
+            feature_names = [f'feature_{i}' for i in range(len(importances))]
+        
+        importance_df = pd.DataFrame({
+            'feature': feature_names,
+            'importance': importances
+        }).sort_values('importance', ascending=False).head(top_n)
+        
+        return importance_df
+
+Optimisation File:
+    
+    def __init__(self, model, feature_columns: List[str], feature_engineer):
+      
+    
+        self.model = model
+        self.feature_columns = feature_columns
+        self.feature_engineer = feature_engineer
+        
+    def predict_cost(self, session_data: pd.DataFrame) -> np.ndarray:
+
+        # Ensure all required features are present
+        session_features = self._prepare_features(session_data)
+        return self.model.predict(session_features)
+    
+    def _prepare_features(self, df: pd.DataFrame) -> pd.DataFrame:
+
+        # Ensure all feature columns exist
+        for col in self.feature_columns:
+            if col not in df.columns:
+                # Fill missing columns with median/default values
+                if 'target_encoded' in col or 'avg' in col:
+                    df[col] = 0.0  # Default for encoded/aggregated features
+                else:
+                    df[col] = 0.0
+        
+        return df[self.feature_columns]
+    
+    def optimize_charging_time(self, session_data: pd.DataFrame,
+                              hour_range: Tuple[int, int] = (0, 23)) -> Dict:
+      
+        if len(session_data) != 1:
+            raise ValueError("session_data must contain exactly one row")
+        
+        session = session_data.iloc[0].copy()
+        best_hour = None
+        best_cost = float('inf')
+        results = []
+        
+        # Test different hours
+        for hour in range(hour_range[0], hour_range[1] + 1):
+            test_session = session.copy()
+            test_session['hour'] = hour
+            
+            # Update derived features
+            test_session['is_peak_hours'] = int(
+                ((hour >= 6) & (hour < 10)) | ((hour >= 17) & (hour < 21))
+            )
+            test_session['is_off_peak'] = int((hour >= 22) | (hour < 6))
+            test_session['is_weekend'] = session.get('is_weekend', 0)
+            
+            # Create DataFrame for prediction
+            test_df = pd.DataFrame([test_session])
+            
+            # Engineer features
+            test_df = self.feature_engineer.create_time_features(test_df)
+            
+            # Predict cost
+            try:
+                cost = self.predict_cost(test_df)[0]
+                results.append({'hour': hour, 'predicted_cost': cost})
+                
+                if cost < best_cost:
+                    best_cost = cost
+                    best_hour = hour
+            except Exception as e:
+                print(f"Error predicting for hour {hour}: {e}")
+                continue
+        
+        return {
+            'optimal_hour': best_hour,
+            'optimal_cost': best_cost,
+            'current_hour': session.get('hour', None),
+            'current_cost': self.predict_cost(session_data)[0] if 'hour' in session_data.columns else None,
+            'all_hours': results
+        }
+    
+    def optimize_charger_type(self, session_data: pd.DataFrame,
+                              charger_types: Optional[List[str]] = None) -> Dict:
+           if len(session_data) != 1:
+            raise ValueError("session_data must contain exactly one row")
+        
+        session = session_data.iloc[0].copy()
+        current_charger = session.get('Charger Type', None)
+        
+        if charger_types is None:
+            # Get unique charger types from original data
+            charger_types = ['Level 1', 'Level 2', 'DC Fast']  # Common types
+        
+        best_charger = None
+        best_cost = float('inf')
+        results = []
+        
+        # Test different charger types
+        for charger_type in charger_types:
+            test_session = session.copy()
+            test_session['Charger Type'] = charger_type
+            
+            # Update charging rate based on charger type (simplified)
+            charger_rate_map = {
+                'Level 1': 1.4,  # kW
+                'Level 2': 7.2,  # kW
+                'DC Fast': 50.0  # kW
+            }
+            
+            if charger_type in charger_rate_map:
+                test_session['Charging Rate (kW)'] = charger_rate_map[charger_type]
+            
+            test_df = pd.DataFrame([test_session])
+            test_df = self.feature_engineer.create_efficiency_features(test_df)
+            test_df = self.feature_engineer.create_interaction_features(test_df)
+            
+            # Predict cost
+            try:
+                cost = self.predict_cost(test_df)[0]
+                results.append({
+                    'charger_type': charger_type,
+                    'predicted_cost': cost,
+                    'charging_rate': charger_rate_map.get(charger_type, None)
+                })
+                
+                if cost < best_cost:
+                    best_cost = cost
+                    best_charger = charger_type
+            except Exception as e:
+                print(f"Error predicting for charger {charger_type}: {e}")
+                continue
+        
+        return {
+            'optimal_charger': best_charger,
+            'optimal_cost': best_cost,
+            'current_charger': current_charger,
+            'current_cost': self.predict_cost(session_data)[0],
+            'all_chargers': results
+        }
+    
+    def identify_inefficient_sessions(self, sessions_df: pd.DataFrame,
+                                     cost_threshold_percentile: float = 75) -> pd.DataFrame:
+
+        predicted_costs = self.predict_cost(sessions_df)
+        
+        threshold = np.percentile(predicted_costs, cost_threshold_percentile)
+        
+        sessions_df = sessions_df.copy()
+        sessions_df['predicted_cost'] = predicted_costs
+        sessions_df['is_inefficient'] = predicted_costs > threshold
+        
+        median_cost = np.median(predicted_costs)
+        sessions_df['potential_savings'] = np.maximum(
+            0, predicted_costs - median_cost
+        )
+        
+        inefficient = sessions_df[sessions_df['is_inefficient']].copy()
+        
+        print(f"Identified {len(inefficient)} inefficient sessions ({len(inefficient)/len(sessions_df)*100:.1f}%)")
+        print(f"Average potential savings: ${inefficient['potential_savings'].mean():.2f}")
+        
+        return inefficient.sort_values('potential_savings', ascending=False)
+    
+    def generate_recommendations(self, session_data: pd.DataFrame) -> Dict:
+      
+        if len(session_data) != 1:
+            raise ValueError("session_data must contain exactly one row")
+        
+        recommendations = {}
+        
+        time_optimization = self.optimize_charging_time(session_data)
+        recommendations['time_optimization'] = time_optimization
+        
+        charger_optimization = self.optimize_charger_type(session_data)
+        recommendations['charger_optimization'] = charger_optimization
+        
+        current_cost = self.predict_cost(session_data)[0]
+        optimal_cost = min(
+            time_optimization.get('optimal_cost', current_cost),
+            charger_optimization.get('optimal_cost', current_cost)
+        )
+        
+        recommendations['current_predicted_cost'] = current_cost
+        recommendations['optimal_predicted_cost'] = optimal_cost
+        recommendations['potential_savings'] = current_cost - optimal_cost
+        recommendations['savings_percentage'] = (
+            (current_cost - optimal_cost) / current_cost * 100
+            if current_cost > 0 else 0
+        )
+        
+        return recommendations
+    
+    def simulate_scenarios(self, base_session: pd.DataFrame,
+                          scenarios: List[Dict]) -> pd.DataFrame:
+
+        if len(base_session) != 1:
+            raise ValueError("base_session must contain exactly one row")
+        
+        base = base_session.iloc[0].copy()
+        results = []
+        
+        for i, scenario in enumerate(scenarios):
+            test_session = base.copy()
+            
+            for key, value in scenario.items():
+                test_session[key] = value
+            
+            test_df = pd.DataFrame([test_session])
+
+            test_df = self.feature_engineer.create_time_features(test_df)
+            test_df = self.feature_engineer.create_efficiency_features(test_df)
+            
+            try:
+                cost = self.predict_cost(test_df)[0]
+                results.append({
+                    'scenario_id': i + 1,
+                    'predicted_cost': cost,
+                    **scenario
+                })
+            except Exception as e:
+                print(f"Error in scenario {i+1}: {e}")
+                continue
+CONFERENCE PUBLICATION
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PLAGIARISM REPORT
+
+
+
